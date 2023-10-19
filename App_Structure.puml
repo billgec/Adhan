@@ -1,0 +1,72 @@
+@startuml
+class MainActivity {
+    +displayPrayerTimes()
+    +scheduleAdhan()
+}
+class PrayerTimesApp {
+    +setUserPreferences()
+    +notifyPrayerTime()
+}
+class NotificationService {
+    +scheduleNotification()
+    +displayNotification()
+}
+class PrayerTimes {
+    +fetchPrayerTimes()
+    +savePrayerTimes()
+}
+class UserPreferences {
+    +setAdhanSound()
+    +setPrayerTimes()
+}
+class AdhanSound {
+    +getAvailableAdhanSounds()
+    +getSelectedAdhanSound()
+    +setSelectedAdhanSound(soundInfo)
+    +getDefaultAdhanSound()
+    +playAdhanSound()
+    +addCustomAdhanSound(soundInfo)
+    +removeCustomAdhanSound(soundInfo)
+    +getCustomAdhanSounds()
+    +setDefaultAdhanSound(soundInfo)
+    +validateAdhanSound(soundInfo)
+}
+class Database {
+    +savePrayerTimes(prayerTimesData)
+    +getPrayerTimes()
+    +saveUserPreferences(userPrefs)
+    +getUserPreferences()
+    +clearData()
+}
+class AlarmScheduler {
+    +setExact()
+    +setRepeating()
+    +setInexactRepeating()
+    +setAndAllowWhileIdle()
+    +setExactAndAllowWhileIdle()
+    +setAlarmClock()
+}
+MainActivity --> NotificationService
+MainActivity --> AlarmScheduler
+MainActivity --> AdhanSound
+MainActivity --> UserPreferences
+
+PrayerTimesApp --> UserPreferences
+PrayerTimesApp --> NotificationService
+PrayerTimesApp --> AlarmScheduler
+PrayerTimesApp --> AdhanSound
+
+NotificationService --> AlarmScheduler
+NotificationService --> MainActivity
+NotificationService --> AdhanSound
+
+UserPreferences --> AdhanSound
+UserPreferences --> AlarmScheduler
+UserPreferences --> PrayerTimes
+
+Database --> PrayerTimes
+Database --> UserPreferences
+
+AdhanSound --> AlarmScheduler
+
+@enduml
