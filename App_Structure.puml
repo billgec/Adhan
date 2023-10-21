@@ -19,6 +19,9 @@ class UserPreferences {
     +setAdhanSound()
     +setPrayerTimes()
 }
+class Compass {
+    +getQiblaDirection()
+}
 class AdhanSound {
     +getAvailableAdhanSounds()
     +getSelectedAdhanSound()
