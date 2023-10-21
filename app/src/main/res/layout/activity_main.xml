@@ -1,18 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    <!-- res/layout/activity_main.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_main_activity">
 
+    <!-- Compass Button (Top Left) -->
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/helper_button_selector"
+        android:text="@string/info"
+        android:src="@drawable/ic_compass"
+        android:textColor="#FFFFFF" />
+
+    <!-- Settings Button (Top Right) -->
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_settings"
+        android:background="@drawable/helper_button_selector"
+    android:contentDescription="@string/settings" />
+
+    <!-- Location (Top Center) -->
     <TextView
+        android:id="@+id/locationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="@string/location_name"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Next Prayer Name (Center Top) -->
+    <TextView
+        android:id="@+id/nextPrayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/next_prayer"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!-- Time Left for Next Prayer (Center Middle) -->
+    <TextView
+        android:id="@+id/timeLeftText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nextPrayerName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/time_left_00_00"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Prayer Times List (Center Bottom) -->
+    <LinearLayout
+        android:id="@+id/prayerTimesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeLeftText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:radius="30dp" >
+
+        <!-- Prayer Time Entry (Example for one prayer time) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/helper_gradient_background">
+
+            <!-- Prayer Name -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/fajr"
+                android:textSize="23sp" />
+
+            <!-- Prayer Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00 AM"
+                android:textSize="23sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/helper_gradient_background">
+
+            <!-- Prayer Name -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/dhuhr"
+                android:textSize="23sp" />
+
+            <!-- Prayer Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00 AM"
+                android:textSize="23sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/helper_gradient_background">
+
+            <!-- Prayer Name -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/asr"
+                android:textSize="23sp" />
+
+            <!-- Prayer Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00 AM"
+                android:textSize="23sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/helper_gradient_background">
+
+            <!-- Prayer Name -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/maghrib"
+                android:textSize="23sp" />
+
+            <!-- Prayer Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00 AM"
+                android:textSize="23sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/helper_gradient_background">
+
+            <!-- Prayer Name -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/isha"
+                android:textSize="23sp" />
+
+            <!-- Prayer Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05:00 PM"
+                android:textSize="23sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
