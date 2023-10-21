@@ -17,12 +17,14 @@
         android:background="@drawable/helper_button_selector"
         android:text="@string/info"
         android:src="@drawable/ic_compass"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:contentDescription="@string/compass_to_qibla"
+        />
 
     <!-- Settings Button (Top Right) -->
     <ImageButton
         android:id="@+id/settingsButton"
-        android:layout_width="48dp"
+        android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
