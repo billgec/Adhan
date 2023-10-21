@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!-- res/layout/activity_main.xml -->
+<!-- res/layout/activity_main.xml -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main_activity">
+    android:background="@drawable/background_daytime">
 
     <!-- Compass Button (Top Left) -->
     <ImageButton
@@ -17,9 +17,7 @@
         android:background="@drawable/helper_button_selector"
         android:text="@string/info"
         android:src="@drawable/ic_compass"
-        android:textColor="#FFFFFF"
-        android:contentDescription="@string/compass_to_qibla"
-        />
+        android:contentDescription="@string/compass_to_qibla" />
 
     <!-- Settings Button (Top Right) -->
     <ImageButton
@@ -31,7 +29,7 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_settings"
         android:background="@drawable/helper_button_selector"
-    android:contentDescription="@string/settings" />
+        android:contentDescription="@string/settings" />
 
     <!-- Location (Top Center) -->
     <TextView
@@ -41,7 +39,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="@string/location_name"
-        android:textColor="#FFFFFF"
+        android:textColor="#3A3434"
         android:textSize="24sp" />
 
     <!-- Next Prayer Name (Center Top) -->
@@ -52,8 +50,8 @@
         android:layout_below="@id/locationText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="@string/next_prayer"
-        android:textColor="#FFFFFF"
+        android:text="@string/prayer_in_name"
+        android:textColor="#3A3434"
         android:textSize="20sp" />
 
     <!-- Time Left for Next Prayer (Center Middle) -->
@@ -64,9 +62,9 @@
         android:layout_below="@id/nextPrayerName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:text="@string/time_left_00_00"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:text="@string/time_left"
+        android:textColor="#3A3434"
+        android:textSize="35sp" />
 
     <!-- Prayer Times List (Center Bottom) -->
     <LinearLayout
@@ -76,124 +74,248 @@
         android:layout_below="@id/timeLeftText"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
+        android:background="@drawable/helper_gradient_background"
         android:radius="30dp" >
 
-        <!-- Prayer Time Entry (Example for one prayer time) -->
+        <!-- Title Line with Calendar Icon and Date -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/helper_gradient_background">
+            android:orientation="horizontal">
+
+            <!-- Calendar Icon -->
+            <ImageButton
+                android:id="@+id/CalendarButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/helper_button_selector"
+                android:text="@string/info"
+                android:src="@drawable/ic_calendar"
+                android:textColor="#FFFFFF"
+                android:contentDescription="@string/calendar" />
+
+            <!-- Date Mooncalendar/georgian        -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="7 Rabi'ul Akhir 1445\n Sa., 21.10.2023"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <!-- Prayer Time Entry -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal">
 
             <!-- Prayer Name -->
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/fajr"
-                android:textSize="23sp" />
+                android:textSize="18sp" />
 
             <!-- Prayer Time -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="05:00 AM"
-                android:textSize="23sp" />
+                android:layout_marginEnd="70dp"
+                android:text="05:44 "
+                android:textSize="28sp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/notification_fajr"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_on"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/is_notification_on_or_off" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/helper_gradient_background">
+            android:orientation="horizontal">
 
-            <!-- Prayer Name -->
+            <!-- Prayer Ne -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/dhuhr"
-                android:textSize="23sp" />
+                android:textSize="18sp" />
 
             <!-- Prayer Time -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="05:00 AM"
-                android:textSize="23sp" />
+                android:layout_marginEnd="70dp"
+                android:text="12:48 "
+                android:textSize="28sp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/notification_dhuhr"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_on"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/is_notification_on_or_off" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/helper_gradient_background">
+            android:orientation="horizontal">
 
-            <!-- Prayer Name -->
+            <!-- Prayer Ne -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/asr"
-                android:textSize="23sp" />
+                android:textSize="18sp" />
 
             <!-- Prayer Time -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="05:00 AM"
-                android:textSize="23sp" />
+                android:layout_marginEnd="70dp"
+                android:text="15:35"
+                android:textSize="28sp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/notification_asr"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_on"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/is_notification_on_or_off" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/helper_gradient_background">
+            android:orientation="horizontal">
 
-            <!-- Prayer Name -->
+            <!-- Prayer Ne -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/maghrib"
-                android:textSize="23sp" />
+                android:textSize="18sp" />
 
             <!-- Prayer Time -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="05:00 AM"
-                android:textSize="23sp" />
+                android:layout_marginEnd="70dp"
+                android:text="18:01 "
+                android:textSize="28sp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/notification_maghrib"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_on"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/is_notification_on_or_off" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:background="@drawable/helper_gradient_background">
+            android:orientation="horizontal">
 
-            <!-- Prayer Name -->
+            <!-- Prayer Ne -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="@string/isha"
-                android:textSize="23sp" />
+                android:textSize="18sp" />
 
             <!-- Prayer Time -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="05:00 PM"
-                android:textSize="23sp" />
+                android:layout_marginEnd="70dp"
+                android:text="19:30"
+                android:textSize="28sp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/notification_isha"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_notification_on"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@string/is_notification_on_or_off" />
+        </LinearLayout>
+
+        <!-- Horizontal Line (Separator) -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#736F6F" />
+
+        <!-- Shuruq and Jumuaa Times -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal">
+
+            <!-- Shuruq -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="07:19\nShuruq"
+                android:textSize="19sp" />
+
+            <!-- Jumuaa Label (occupying remaining space) -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="13:30\nJumuaa"
+                android:textSize="19sp"
+                android:gravity="end" />
+
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
