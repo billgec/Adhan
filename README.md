@@ -154,3 +154,6 @@ AdhanSound --> AlarmScheduler
 - select which days to play adhan
 - prayer helper (step by step with virtual imam)
 - automatic location reader 
+- how many rakkat
+- qibla direction
+- instructions for prayer
