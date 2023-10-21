@@ -1,0 +1,8 @@
+<!-- res/drawable/settings_button_normal.xml -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#806ea3c3" /> <!-- 50% opacity -->
+    <corners android:radius="12dp" />
+    <alpha android:alpha="0.5"/>
+
+</shape>

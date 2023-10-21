@@ -1,0 +1,6 @@
+<!-- res/drawable/settings_button_hovered.xml -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#ffd6a8" /> <!-- Hovered state color -->
+    <corners android:radius="12dp" /> <!-- Corner radius, you can adjust as needed -->
+</shape>
