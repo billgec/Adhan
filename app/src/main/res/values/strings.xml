@@ -6,9 +6,13 @@
     <string name="maghrib">Maghrib</string>
     <string name="isha">Isha</string>
     <string name="settings">Settings</string>
-    <string name="location_name">Location Name</string>
-    <string name="next_prayer">Next Prayer</string>
-    <string name="time_left_00_00">Time Left: 00:00</string>
+    <string name="location_name">GRAZ, Austria</string>
+    <string name="prayer_in_name">Fadj in</string>
+    <string name="time_left">08:15</string>
     <string name="info">Info</string>
     <string name="compass_to_qibla">Compass to Qibla</string>
+    <string name="is_notification_on_or_off">Is notification on or off</string>
+    <string name="shuruq">Shuruq</string>
+    <string name="jumuaa">Jumuaa</string>
+    <string name="calendar">Calendar</string>
 </resources>
