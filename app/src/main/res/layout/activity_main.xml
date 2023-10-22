@@ -8,7 +8,7 @@
 
     <!-- Compass Button (Top Left) -->
     <ImageButton
-        android:id="@+id/infoButton"
+        android:id="@+id/compassButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
@@ -131,6 +131,7 @@
 
             <!-- Prayer Time -->
             <TextView
+                android:id="@+id/time_fajr"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
@@ -165,6 +166,7 @@
 
             <!-- Prayer Time -->
             <TextView
+                android:id="@+id/time_dhuhr"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
@@ -199,6 +201,7 @@
 
             <!-- Prayer Time -->
             <TextView
+                android:id="@+id/time_asr"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
@@ -232,6 +235,7 @@
 
             <!-- Prayer Time -->
             <TextView
+                android:id="@+id/time_maghrib"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
@@ -265,6 +269,7 @@
 
             <!-- Prayer Time -->
             <TextView
+                android:id="@+id/time_isha"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="70dp"
